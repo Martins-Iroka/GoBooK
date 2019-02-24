@@ -49,7 +49,7 @@ public class GoBooKAdapter extends ArrayAdapter<GoBooK> {
         bookTitle.setTextColor(getContext().getResources().getColor(android.R.color.white));
 
         TextView bookAuthors = listItemView.findViewById(R.id.book_authors);
-        bookAuthors.setText(goBooK.getBookAuthor() + "\n");
+        bookAuthors.setText(goBooK.getBookAuthor());
         bookAuthors.setTextColor(getContext().getResources().getColor(android.R.color.white));
 
         TextView publishedDate = listItemView.findViewById(R.id.published_date);

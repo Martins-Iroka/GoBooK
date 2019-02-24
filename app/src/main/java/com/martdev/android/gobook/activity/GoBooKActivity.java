@@ -31,7 +31,7 @@ public class GoBooKActivity extends AppCompatActivity implements LoaderCallbacks
 
     private GoBooKAdapter mAdapter;
 
-    private static final int EARTHQUAKE_LOADER_ID = 1;
+    private static final int GOBOOK_LOADER_ID = 1;
 
     private EditText mKeywordSearch;
     private Button mSearchButton;
@@ -96,11 +96,16 @@ public class GoBooKActivity extends AppCompatActivity implements LoaderCallbacks
                     LoaderManager loaderManager = getLoaderManager();
                     mProgressBar.setVisibility(View.VISIBLE);
 
-                    // Initialize the loader. Pass in the int ID constant defined above and pass in null for
-                    // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
-                    // because this activity implements the LoaderCallbacks interface).
-                    loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, GoBooKActivity.this);
-                    Log.i("MainActivity", "initLoader called");
+                    if (loaderManager.getLoader(GOBOOK_LOADER_ID) == null) {
+                        // Initialize the loader. Pass in the int ID constant defined above and pass in null for
+                        // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
+                        // because this activity implements the LoaderCallbacks interface).
+                        loaderManager.initLoader(GOBOOK_LOADER_ID, null, GoBooKActivity.this);
+                        Log.i("MainActivity", "initLoader called");
+                    } else {
+                        loaderManager.restartLoader(GOBOOK_LOADER_ID, null, GoBooKActivity.this);
+                        Log.i("MainActivity", "restartLoader called");
+                    }
                 } else {
                     // Otherwise, display error
                     // First, hide loading indicator so error message will be visible

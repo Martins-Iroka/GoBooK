@@ -129,7 +129,7 @@ public class QueryUtils {
                 }
 
                 JSONObject imageObj = volumeObj.getJSONObject("imageLinks");
-                String imageUrl = imageObj.getString("thumbnail");
+                String imageUrl = imageObj.getString("smallThumbnail");
 
                 String infoLink = volumeObj.getString("infoLink");
 

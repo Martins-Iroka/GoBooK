@@ -3,8 +3,8 @@
     <string name="book_title">Book Title</string>
     <string name="book_authors">Book Author</string>
     <string name="published_date">Date</string>
-    <string name="keyword_search">book author, name, e.t.c</string>
-    <string name="search_button">Search</string>
+    <string name="search">book author, name, e.t.c</string>
+    <string name="perform_search">Use the search icon</string>
     <string name="no_internet_connection">No Internet connection</string>
     <string name="no_books">No books to display</string>
 </resources>
